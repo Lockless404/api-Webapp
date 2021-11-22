@@ -1,7 +1,35 @@
-.hello {
-  color: red;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-  background-color: bisque;
+  padding: 50px;
+}
+
+
+header {
+  display: flex;
+  align-items: center;
+}
+
+img {
+  width: 100px;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+}
+
+ul li {
+  margin: 0 20px;
+}
+
+footer {
+  align-items: center;
+  text-align: center;
+  border-top: 1px solid #000;
 }
