@@ -20,7 +20,7 @@
     <!--Please use sections for content-->
     <section class="container">
       <div class="reservation">
-        <button class="resClose">X</button>
+        <button class="resClose">x</button>
         <img class="resImg" src="https://i.picsum.photos/id/1022/6000/3376.jpg?hmac=FBA9Qbec8NfDlxj8xLhV9k3DQEKEc-3zxkQM-hmfcy0" alt="">
         <h1 class="resh1">Space 3</h1>
         <div class="resDetail">
@@ -40,12 +40,21 @@
           <li>03/11/2021 - 03-12-2021 Alex</li>
           <li>03/14/2021 - 03/16/2021 by Mia</li>
         </ul>
-        <form action="#">
-          <h2>Add a reservation</h2>
-          <input type="text">
-          <input type="date">
-          <input type="date">
-          <button>Reserve</button>
+        <h2>Add a reservation</h2>
+        <form class="resForm" action="#">
+          <div class="resInputWhole">
+            <p>Your name:</p>
+            <input class="resIn" type="text">
+          </div>
+          <div class="resInputWhole">
+            <p>Start date:</p>
+            <input class="resIn" type="date">
+          </div>
+          <div class="resInputWhole">
+            <p>End date:</p>
+            <input class="resIn" type="date">
+          </div>
+          <button class="resFormBtn">Reserve</button>
         </form>
       </div>
     </section>

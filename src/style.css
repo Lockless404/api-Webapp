@@ -59,6 +59,13 @@ footer {
   position: absolute;
   top: 1%;
   right: 1%;
+  border-radius: 0;
+  background-color: #fff;
+  border: #fff;
+  font-size: 3.5rem;
+  font-weight: 700;
+  width: 50px;
+  cursor: pointer;
 }
 
 .resImg {
@@ -78,5 +85,32 @@ footer {
 }
 
 .resList {
-  
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+
+.resForm {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  width: 75%;
+  height: 30%;
+}
+
+.resInputWhole {
+  width: 100%;
+}
+
+.resIn {
+  width: 40%;
+}
+
+.resFormBtn {
+  width: 40%;
+  border-radius: 0;
+  background-color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
 }
