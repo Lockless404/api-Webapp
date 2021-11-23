@@ -34,7 +34,7 @@ footer {
   border-top: 1px solid #000;
 }
 
-.container {
+.resContainer {
   z-index: 500;
   height: 94vh;
   width: 96vw;
@@ -42,6 +42,7 @@ footer {
   position: absolute;
   top: 3vh;
   left: 2vw;
+  display: none;
 }
 
 .reservation {
@@ -70,7 +71,7 @@ footer {
 
 .resImg {
   width: 75%;
-  height: auto;
+  max-height: 40%;
 }
 
 .resh1 {
@@ -113,4 +114,8 @@ footer {
   background-color: #fff;
   font-size: 1.8rem;
   cursor: pointer;
+}
+
+.appear {
+  display: unset;
 }
