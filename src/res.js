@@ -13,12 +13,12 @@ function render(data) {
       <img class="resImg" src="${data.download_url}" alt="">
       <h1 class="resh1">Exibition 3</h1>
       <div class="resDetail">
-        <p>Autor: ${data.author}</p>
-        <p>Length: 300</p>
+        <p>Author: ${data.author}</p>
+        <p>Length: ${data.height}</p>
       </div>
       <div class="resDetail">
         <p>Price $${data.id}</p>
-        <p>Width: 400</p>
+        <p>Width: ${data.width}</p>
       </div>
       <h2>Reservation</h2>
       <ul class="resList">
