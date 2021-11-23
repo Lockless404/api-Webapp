@@ -19,11 +19,11 @@ const getPics = async () => {
   rowOne.setAttribute('class', 'f-row');
   rowTwo.setAttribute('class', 'f-row');
   let idx = 0;
-  getImages().then((v)=>{
-    v.forEach((img)=>{
+  getImages().then((it) => {
+    it.forEach(() => {
       const listItem = document.createElement('div');
       listItem.innerHTML = `<div class='f-col'>
-        <img src='${v[idx].download_url}' alt=''>
+        <img src='${it[idx].download_url}' alt=''>
         <div class='f-row'>
           <p>Exhibition ${idx}</p>
           <p>5 Likes</p>
