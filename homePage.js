@@ -1,5 +1,8 @@
+import apiKeyInvolvment from "./apiKey.js";
+
+const picIds = [1000, 1002, 1003, 1015, 1021, 1022];
+
 const getImages = async () => {
-  const picIds = [1000, 1002, 1003, 1015, 1021, 1022];
   const pics =[]
   for(let i = 0; i < picIds.length; i++){
     const urlToFetch= `https://picsum.photos/id/${picIds[i]}/info`
@@ -19,6 +22,7 @@ const getPics = async () => {
   rowOne.setAttribute('class', 'f-row');
   rowTwo.setAttribute('class', 'f-row');
   let idx = 0;
+  
   getImages().then((it) => {
     it.forEach(() => {
       const listItem = document.createElement('div');
@@ -26,7 +30,7 @@ const getPics = async () => {
         <img src='${it[idx].download_url}' alt=''>
         <div class='f-row'>
           <p>Exhibition ${idx}</p>
-          <p>5 Likes</p>
+          <button id=${idx} class='likes'>Likes</button>
         </div>
         <button type='button' class='comments'>Comments</button>
         <button type='button' class='reservations'>Reservations</button>
@@ -43,8 +47,30 @@ const getPics = async () => {
   picSection.append(rowOne, rowTwo);
 };
 
-const postLikes = async (imgId) => {
-  await fetch ()
+const apiLikeUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${apiKeyInvolvment}/likes`;
+
+const postLikes = async (picId) => {
+  const currLikes = await fetch(apiLikeUrl, {
+    method: 'POST',
+    body: JSON.stringify({
+      item_id: picId,
+    }),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  });
+  return currLikes;
+};
+
+getImages();
+
+const showLikes = async () => {
+  const currItem = await fetch(apiLikeUrl)
+    .then((resp) => resp.json())
+    .then((data) => data);
+  console.log(currItem)
+  const allLikes = document.getElementsByClassName('.likes');
+  console.log(allLikes)
 }
 
-export default getPics;
+export { getPics, postLikes, showLikes };

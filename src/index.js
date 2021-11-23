@@ -1,4 +1,6 @@
 import './style.css';
-import getPics from '../homePage.js';
+import { getPics, postLikes, showLikes } from '../homePage.js';
 
-getPics();
+
+console.log(getPics());
+showLikes();

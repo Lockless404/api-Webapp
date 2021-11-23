@@ -52,3 +52,8 @@ footer {
   flex-direction: row;
   justify-content: space-evenly;
 }
+
+.likes {
+  background-color: #fff;
+  border: none;
+}
