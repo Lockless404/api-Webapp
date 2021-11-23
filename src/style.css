@@ -9,13 +9,12 @@ body {
   padding: 50px;
 }
 
-
 header {
   display: flex;
   align-items: center;
 }
 
-img {
+header img {
   width: 100px;
 }
 
@@ -27,6 +26,120 @@ ul {
 ul li {
   margin: 0 20px;
 }
+
+/*----------- START --------- The following styles are for the COMMENT POPUP section BY Jeff [Student B] -------------------- */
+
+.popup-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: #fff;
+  z-index: 999;
+  overflow-y: auto
+}
+
+.comment-container {
+  width: 90%;
+  margin: 20px auto;
+  background: #ddd9;
+  border-radius: 20px;
+  padding: 20px;
+  align-items: center;
+}
+
+.section-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.block-one {
+  text-align: center;
+  position: relative;
+}
+
+.main-img {
+  width: 60%;
+  border-radius: 20px;
+}
+
+.sub-img {
+  width: 75px;
+  height: 75px;
+  position: absolute;
+  top: 0%;
+  cursor: pointer;
+}
+
+.project-title h2 {
+  text-align: center;
+  font-weight: 500;
+  margin: 10px 0;
+}
+
+.project-details {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px 50px;
+}
+
+.project-title p {
+  font-weight: 400;
+}
+ 
+.comment-details h3 {
+  text-align: center;
+  font-weight: 500;
+  margin: 10px 0;
+}
+
+.comment-lists {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+form {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin: 20px auto;
+}
+
+input[type="text"] {
+  margin: 10px 0;
+  padding: 10px;
+  outline: none;
+  background: transparent;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+
+textarea {
+  margin: 10px 0;
+  padding: 10px;
+  outline: none;
+  background: transparent;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+
+input[type="submit"] {
+  margin: 10px 0;
+  padding: 10px;
+  outline: none;
+  background: transparent;
+  border: 1px solid #000;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/*----------- STOP ---------- The following styles are for the COMMENT POPUP section BY Jeff [Student B] -------------------- */
 
 footer {
   align-items: center;
