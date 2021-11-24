@@ -1,4 +1,4 @@
-import apiKeyInvolvment from "./apiKey.js";
+import apiKeyInvolvment from './apiKey.js';
 
 const picIds = [1000, 1002, 1003, 1015, 1021, 1022];
 
@@ -15,7 +15,7 @@ const getImages = async () => {
   return pics;
 }
 
-const getPics = async () => {
+const getPics = () => {
   const picSection = document.getElementById('item-list');
   const rowOne = document.createElement('div');
   const rowTwo = document.createElement('div');
@@ -29,7 +29,7 @@ const getPics = async () => {
       listItem.innerHTML = `<div class='f-col'>
         <img src='${it[idx].download_url}' alt=''>
         <div class='f-row'>
-          <p>Exhibition ${idx}</p>
+          <p>Exhibition ${idx + 1}</p>
           <button id=${idx} class='likes'>Likes</button>
         </div>
         <button type='button' class='comments'>Comments</button>
@@ -62,15 +62,13 @@ const postLikes = async (picId) => {
   return currLikes;
 };
 
-getImages();
+// const showLikes = async () => {
+//   const currItem = await fetch(apiLikeUrl)
+//     .then((resp) => resp.json())
+//     .then((data) => data);
+//   console.log(currItem)
+//   const allLikes = document.getElementsByClassName('.likes');
+//   console.log(allLikes)
+// }
 
-const showLikes = async () => {
-  const currItem = await fetch(apiLikeUrl)
-    .then((resp) => resp.json())
-    .then((data) => data);
-  console.log(currItem)
-  const allLikes = document.getElementsByClassName('.likes');
-  console.log(allLikes)
-}
-
-export { getPics, postLikes, showLikes };
+export { getPics, postLikes };
