@@ -45,4 +45,51 @@ function render(data) {
   `;
 }
 
-export { getApi, render };
+
+class Reservation {
+  constructor(username, date_start, date_end, item_id) {
+    this.username = username;
+    this.date_start = date_start;
+    this.date_end = date_end;
+    this.item_id = item_id;
+  }
+}
+
+const renderRes = (reserver) => {
+  const resList = document.querySelector('.resList');
+  reserver.forEach((reservation) => {
+    resList.innerHTML += `
+  <li>${reservation.date_start} - ${reservation.date_end} by ${reservation.username}</li>
+  `;
+  });
+}
+
+const getRes = async (id) => {
+  const pull = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/4FZqlyOYZUYNqbT9zcA9/reservations?item_id=${id}`);
+
+  const data = await pull.json();
+  return data;
+}
+
+const clearRes = () => {
+  const resList = document.querySelector('.resList');
+  resList.innerHTML = '';
+}
+
+const sendRes = async (reserver) => {
+  fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/4FZqlyOYZUYNqbT9zcA9/reservations/', {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify(reserver),
+  }).then((res) => res.json());
+}
+
+
+
+
+
+
+
+export { getApi, render, Reservation, renderRes, getRes, clearRes, sendRes };
