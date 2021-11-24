@@ -16,7 +16,12 @@ header {
 }
 
 img {
-  width: 100px;
+  width: 200px;
+}
+
+#item-list img {
+  width: 300px;
+  height: 200px;
 }
 
 ul {
@@ -29,7 +34,26 @@ ul li {
 }
 
 footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   align-items: center;
   text-align: center;
   border-top: 1px solid #000;
+}
+
+.f-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.f-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.likes {
+  background-color: #fff;
+  border: none;
 }
