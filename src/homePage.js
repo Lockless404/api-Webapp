@@ -1,4 +1,8 @@
 import apiKeyInvolvment from './apiKey.js';
+import '@fortawesome/fontawesome-free/js/fontawesome.js';
+import '@fortawesome/fontawesome-free/js/solid.js';
+import '@fortawesome/fontawesome-free/js/regular.js';
+import '@fortawesome/fontawesome-free/js/brands.js';
 
 const picIds = [1000, 1002, 1003, 1015, 1021, 1022];
 
@@ -12,10 +16,10 @@ const getImages = async () => {
       .catch((err) => err);
     pics.push(images);
   }
-  return pics;
+  return Promise.all(pics);
 };
 
-const getPics = () => {
+const displayPics = () => {
   const picSection = document.getElementById('item-list');
   const rowOne = document.createElement('div');
   const rowTwo = document.createElement('div');
@@ -30,9 +34,12 @@ const getPics = () => {
         <img src='${it[idx].download_url}' alt=''>
         <div class='f-row'>
           <p>Exhibition ${idx + 1}</p>
-          <button id=${idx} class='likes'>Likes</button>
+          <div class='f-col'>
+            <button id='like-${idx}' class='up'><i class="far fa-thumbs-up"></i></button>
+            <button id='btn-${idx}' class='likes'>Likes</button>
+          </div>
         </div>
-        <button type='button' class='comments'>Comments</button>
+        <button type='button' class='commentBtn' data='${idx}'>Comments</button>
         <button type='button' class='reservations'>Reservations</button>
       </div>
       `;
@@ -62,13 +69,24 @@ const postLikes = async (picId) => {
   return currLikes;
 };
 
-// const showLikes = async () => {
-//   const currItem = await fetch(apiLikeUrl)
-//     .then((resp) => resp.json())
-//     .then((data) => data);
-//   console.log(currItem)
-//   const allLikes = document.getElementsByClassName('.likes');
-//   console.log(allLikes)
-// }
+const getLikes = async () => {
+  const currItemLikes = await fetch(apiLikeUrl)
+    .then((resp) => resp)
+    .then((data) => data.json());
+  return currItemLikes;
+};
 
-export { getPics, postLikes };
+
+const showLikes = () => {
+  const likeBtns = document.getElementsByClassName('likes');
+  console.log(likeBtns);
+  getLikes().then((img) => {
+    for (let i = 0; i < img.length - 1; i += 1) {
+      const currId = img[i].item_id;
+      const currLikes = img[i].likes;
+      likeBtns[i].innerHTML = `${currLikes} Likes`;
+    }
+  });
+};
+
+export { displayPics, postLikes, showLikes };

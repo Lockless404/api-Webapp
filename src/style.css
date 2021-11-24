@@ -142,3 +142,10 @@ footer {
   background-color: #fff;
   border: none;
 }
+
+.up {
+  border: 0;
+  background-color: #fff;
+  cursor: pointer;
+  color: green;
+}
