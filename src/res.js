@@ -1,5 +1,5 @@
-const getApi = async () => {
-  const pull = await fetch('https://picsum.photos/id/1022/info');
+const getApi = async (id) => {
+  const pull = await fetch(`https://picsum.photos/id/${id}/info`);
 
   const data = await pull.json();
   return data;

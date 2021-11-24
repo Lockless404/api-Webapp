@@ -1,17 +1,27 @@
 import './style.css';
 import { getApi, render } from './res.js';
-import { getPics, postLikes, showLikes } from './homePage.js';
+import { getPics } from './homePage.js';
 
-// const reservationButton = document.querySelector('.reservation');
+const homepage = document.querySelector('.itemList')
+const reservationSection = document.querySelector('.resContainer');
 
-// reservationButton.addEventListener('click', async () => {
-//   const reservatonSection = document.querySelector('.resContainer');
-//   reservatonSection.classList.add('appear');
-//   const data = await getApi();
-//   render(data);
-// });
+reservationSection.addEventListener('click', (e) => {
+  if (e.target.classList.contains('resClose')) {
+    reservationSection.classList.remove('appear');
+  }
+})
+
+homepage.addEventListener('click', async (e) => {
+  if (e.target.classList.contains('reservations')) {
+    const source = e.target.id;
+    const picIds = [1000, 1002, 1003, 1015, 1021, 1022];
+
+    reservationSection.classList.add('appear');
+    const data = await getApi(picIds[source]);
+    render(data);
+  }
+})
 
 document.addEventListener('DOMContentLoaded', () => {
-  getPics();
-  showLikes();
+  getPics();  
 });

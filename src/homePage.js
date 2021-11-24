@@ -1,5 +1,3 @@
-import apiKeyInvolvment from './apiKey.js';
-
 const picIds = [1000, 1002, 1003, 1015, 1021, 1022];
 
 const getImages = () => {
@@ -30,10 +28,10 @@ const getPics = () => {
         <img src='${it[idx].download_url}' alt=''>
         <div class='f-row'>
           <p>Exhibition ${idx + 1}</p>
-          <button id=${idx} class='likes'>Likes</button>
+          <button id='${idx}' class='likes'>Likes</button>
         </div>
         <button type='button' class='comments'>Comments</button>
-        <button type='button' class='reservations'>Reservations</button>
+        <button type='button' id='${idx}' class='reservations'>Reservations</button>
       </div>
       `;
       if (idx < 3) {
@@ -47,28 +45,4 @@ const getPics = () => {
   picSection.append(rowOne, rowTwo);
 };
 
-const apiLikeUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${apiKeyInvolvment}/likes`;
-
-const postLikes = async (picId) => {
-  const currLikes = await fetch(apiLikeUrl, {
-    method: 'POST',
-    body: JSON.stringify({
-      item_id: picId,
-    }),
-    headers: {
-      'Content-type': 'application/json; charset=UTF-8',
-    },
-  });
-  return currLikes;
-};
-
-const showLikes = async () => {
-  const currItem = await fetch(apiLikeUrl)
-    .then((resp) => resp.json())
-    .then((data) => data);
-  console.log(currItem)
-  const allLikes = document.getElementsByClassName('.likes');
-  console.log(allLikes)
-}
-
-export { getPics, postLikes, showLikes };
+export { getPics };
