@@ -5,13 +5,13 @@ const getApi = async (id) => {
   return data;
 };
 
-function render(data) {
+function render(data, index) {
   const reservatonSection = document.querySelector('.resContainer');
   reservatonSection.innerHTML = `
     <div class="reservation">
       <button class="resClose">x</button>
       <img class="resImg" src="${data.download_url}" alt="">
-      <h1 class="resh1">Exibition 3</h1>
+      <h1 class="resh1">Exibition ${index}</h1>
       <div class="resDetail">
         <p>Author: ${data.author}</p>
         <p>Length: ${data.height}</p>
@@ -20,10 +20,9 @@ function render(data) {
         <p>Price $${data.id}</p>
         <p>Width: ${data.width}</p>
       </div>
-      <h2>Reservation</h2>
+      <h2 class="resNumber">Reservation</h2>
       <ul class="resList">
-        <li>03/11/2021 - 03-12-2021 Alex</li>
-        <li>03/14/2021 - 03/16/2021 by Mia</li>
+        
       </ul>
       <h2>Add a reservation</h2>
       <form class="resForm" action="#">
@@ -45,7 +44,6 @@ function render(data) {
   `;
 }
 
-
 class Reservation {
   constructor(username, date_start, date_end, item_id) {
     this.username = username;
@@ -57,10 +55,12 @@ class Reservation {
 
 const renderRes = (reserver) => {
   const resList = document.querySelector('.resList');
+  const resNumber = document.querySelector('.resNumber');
   reserver.forEach((reservation) => {
     resList.innerHTML += `
   <li>${reservation.date_start} - ${reservation.date_end} by ${reservation.username}</li>
   `;
+    resNumber.innerHTML = `Reservations (${reserver.length})`;
   });
 }
 
@@ -83,13 +83,9 @@ const sendRes = async (reserver) => {
       'Content-type': 'application/json',
     },
     body: JSON.stringify(reserver),
-  }).then((res) => res.json());
+  }).then((res) => {
+    res;
+  });
 }
-
-
-
-
-
-
 
 export { getApi, render, Reservation, renderRes, getRes, clearRes, sendRes };

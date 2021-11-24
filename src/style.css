@@ -6,7 +6,7 @@
 }
 
 body {
-  padding: 50px;
+  padding: 0 50px;
 }
 
 header {
@@ -43,7 +43,6 @@ footer {
 
 .resContainer {
   z-index: 500;
-  height: 94vh;
   width: 96vw;
   background: rgba(50, 50, 50, 0.5);
   position: absolute;
