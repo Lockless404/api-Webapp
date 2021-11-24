@@ -3,17 +3,17 @@ import apiKeyInvolvment from './apiKey.js';
 const picIds = [1000, 1002, 1003, 1015, 1021, 1022];
 
 const getImages = async () => {
-  const pics =[]
-  for(let i = 0; i < picIds.length; i++){
-    const urlToFetch= `https://picsum.photos/id/${picIds[i]}/info`
-    const images = await fetch(urlToFetch)
-    .then((res) => res.json())
-    .then((resData) => resData)
-    .catch((err) => err);
-  pics.push(images)
+  const pics = [];
+  for (let i = 0; i < picIds.length; i += 1) {
+    const urlToFetch = `https://picsum.photos/id/${picIds[i]}/info`;
+    const images = fetch(urlToFetch)
+      .then((res) => res.json())
+      .then((resData) => resData)
+      .catch((err) => err);
+    pics.push(images);
   }
   return pics;
-}
+};
 
 const getPics = () => {
   const picSection = document.getElementById('item-list');
@@ -22,7 +22,7 @@ const getPics = () => {
   rowOne.setAttribute('class', 'f-row');
   rowTwo.setAttribute('class', 'f-row');
   let idx = 0;
-  
+
   getImages().then((it) => {
     it.forEach(() => {
       const listItem = document.createElement('div');
@@ -40,10 +40,10 @@ const getPics = () => {
         rowOne.appendChild(listItem);
       } else {
         rowTwo.appendChild(listItem);
-      };
+      }
       idx += 1;
-    })
-  })
+    });
+  });
   picSection.append(rowOne, rowTwo);
 };
 

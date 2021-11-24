@@ -9,7 +9,6 @@ body {
   padding: 50px;
 }
 
-
 header {
   display: flex;
   align-items: center;
@@ -46,7 +45,7 @@ footer {
   z-index: 500;
   height: 94vh;
   width: 96vw;
-  background : rgba(50,50,50,0.5);  
+  background: rgba(50, 50, 50, 0.5);
   position: absolute;
   top: 3vh;
   left: 2vw;

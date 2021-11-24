@@ -3,10 +3,10 @@ const getApi = async () => {
 
   const data = await pull.json();
   return data;
-}
+};
 
 function render(data) {
-  const reservatonSection = document.querySelector('.resContainer'); 
+  const reservatonSection = document.querySelector('.resContainer');
   reservatonSection.innerHTML = `
     <div class="reservation">
       <button class="resClose">x</button>
@@ -45,4 +45,4 @@ function render(data) {
   `;
 }
 
-export { getApi,render }
+export { getApi, render };
