@@ -2,7 +2,7 @@ import apiKeyInvolvment from './apiKey.js';
 
 const picIds = [1000, 1002, 1003, 1015, 1021, 1022];
 
-const getImages = async () => {
+const getImages = () => {
   const pics = [];
   for (let i = 0; i < picIds.length; i += 1) {
     const urlToFetch = `https://picsum.photos/id/${picIds[i]}/info`;
@@ -12,7 +12,7 @@ const getImages = async () => {
       .catch((err) => err);
     pics.push(images);
   }
-  return pics;
+  return Promise.all(pics);
 };
 
 const getPics = () => {
@@ -62,13 +62,13 @@ const postLikes = async (picId) => {
   return currLikes;
 };
 
-// const showLikes = async () => {
-//   const currItem = await fetch(apiLikeUrl)
-//     .then((resp) => resp.json())
-//     .then((data) => data);
-//   console.log(currItem)
-//   const allLikes = document.getElementsByClassName('.likes');
-//   console.log(allLikes)
-// }
+const showLikes = async () => {
+  const currItem = await fetch(apiLikeUrl)
+    .then((resp) => resp.json())
+    .then((data) => data);
+  console.log(currItem)
+  const allLikes = document.getElementsByClassName('.likes');
+  console.log(allLikes)
+}
 
-export { getPics, postLikes };
+export { getPics, postLikes, showLikes };
