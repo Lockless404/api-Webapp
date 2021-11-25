@@ -6,16 +6,27 @@
 }
 
 body {
-  padding: 50px;
+  background-color: beige;
 }
 
 header {
+  height: 70px;
+  padding: 10px;
   display: flex;
   align-items: center;
+  color: #fff;
+  background-color: rgb(100, 115, 163);
+}
+
+#logo {
+  width: 50px;
+  height: 50px;
 }
 
 img {
   width: 200px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 #item-list img {
@@ -32,13 +43,25 @@ ul li {
   margin: 0 20px;
 }
 
+ul li:hover {
+  cursor: pointer;
+}
+
+ul li:first-child {
+  text-decoration: underline;
+}
+
 footer {
   position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   bottom: 0;
   width: 100%;
-  align-items: center;
+  min-height: 50px;
   text-align: center;
-  border-top: 1px solid #000;
+  background-color: rgb(18, 35, 66);
+  color: #fff;
 }
 
 .resContainer {
@@ -130,6 +153,15 @@ footer {
 .f-col {
   display: flex;
   flex-direction: column;
+  margin: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.f-col.like {
+  border: none;
+  box-shadow: none;
 }
 
 .f-row {
@@ -138,7 +170,30 @@ footer {
   justify-content: space-evenly;
 }
 
+.f-row.title {
+  align-items: center;
+  padding-left: 15px;
+  justify-content: space-between;
+}
+
 .likes {
   background-color: #fff;
+  border: 0;
+}
+
+.up {
+  border: 0;
+  background-color: #fff;
+  cursor: pointer;
+  color: green;
+}
+
+.commentBtn,
+.reservations {
+  border-radius: 5px;
+  width: 90%;
+  margin: 10px auto;
+  background-color: rgb(161, 173, 149);
+  color: #fff;
   border: none;
 }
