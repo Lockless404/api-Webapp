@@ -1,6 +1,6 @@
 import './style.css';
 import { getApi, render } from './res.js';
-import { displayPics, postLikes, showLikes} from './homePage.js';
+import { displayPics, postLikes, showLikes, likeAPic } from './homePage.js';
 
 const reservationButton = document.querySelector('.reservation');
 
@@ -14,4 +14,5 @@ const reservationButton = document.querySelector('.reservation');
 document.addEventListener('DOMContentLoaded', () => {
   displayPics();
   showLikes();
+  likeAPic();
 });

@@ -56,17 +56,16 @@ const displayPics = () => {
 
 const apiLikeUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${apiKeyInvolvment}/likes`;
 
-const postLikes = async (picId) => {
-  const currLikes = await fetch(apiLikeUrl, {
+const postLikes = (imgId) => {
+  fetch(apiLikeUrl, {
     method: 'POST',
     body: JSON.stringify({
-      item_id: picId,
+      item_id: imgId,
     }),
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
     },
-  });
-  return currLikes;
+  }).then((res) => res);
 };
 
 const getLikes = async () => {
@@ -76,17 +75,30 @@ const getLikes = async () => {
   return currItemLikes;
 };
 
+const likeBtns = document.getElementsByClassName('likes');
 
 const showLikes = () => {
-  const likeBtns = document.getElementsByClassName('likes');
-  console.log(likeBtns);
   getLikes().then((img) => {
-    for (let i = 0; i < img.length - 1; i += 1) {
-      const currId = img[i].item_id;
+    for (let i = 0; i < img.length; i += 1) {
       const currLikes = img[i].likes;
       likeBtns[i].innerHTML = `${currLikes} Likes`;
     }
   });
 };
 
-export { displayPics, postLikes, showLikes };
+const likeAPic = () => {
+  const sayLike = document.getElementsByClassName('up');
+  getLikes().then((img) => {
+    for (let i = 0; i < img.length; i += 1) {
+      const currId = img[i].item_id;
+      sayLike[i].addEventListener('click', () => {
+        postLikes(currId);
+      });
+      showLikes();
+    }
+  });
+};
+
+export {
+  displayPics, postLikes, showLikes, likeAPic,
+};
