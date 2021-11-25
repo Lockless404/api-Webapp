@@ -5,7 +5,7 @@ import { getPics } from './homePage.js';
 const homepage = document.querySelector('.itemList');
 const reservationSection = document.querySelector('.resContainer');
 
-reservationSection.addEventListener('click', (e) => {
+reservationSection.addEventListener('click',async (e) => {
   if (e.target.classList.contains('resClose')) {
     reservationSection.classList.remove('appear');
   }
@@ -18,10 +18,9 @@ reservationSection.addEventListener('click', (e) => {
     const input = document.querySelectorAll('.resIn');
     const reserver = new Reservation(input[0].value, input[1].value, input[2].value, id);
     clearRes();
-    sendRes(reserver).then(async () => {
-      const data = await getRes(id);
-      renderRes(data);
-    });
+    await sendRes(reserver)
+    const data = await getRes(id);
+    renderRes(data);
   }
 });
 

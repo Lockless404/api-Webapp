@@ -76,16 +76,14 @@ const clearRes = () => {
   resList.innerHTML = '';
 }
 
-const sendRes = async (reserver) => {
-  fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/4FZqlyOYZUYNqbT9zcA9/reservations/', {
+const sendRes =async (reserver) => {
+  await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/4FZqlyOYZUYNqbT9zcA9/reservations/', {
     method: 'POST',
     headers: {
       'Content-type': 'application/json',
     },
     body: JSON.stringify(reserver),
-  }).then((res) => {
-    res;
-  });
+  })
 }
 
 export { getApi, render, Reservation, renderRes, getRes, clearRes, sendRes };
