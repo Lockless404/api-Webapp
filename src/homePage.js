@@ -45,4 +45,4 @@ const getPics = () => {
   picSection.append(rowOne, rowTwo);
 };
 
-export { getPics };
+export default getPics;
