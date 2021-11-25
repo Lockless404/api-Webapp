@@ -102,6 +102,12 @@ const likeAPic = () => {
   });
 };
 
+const itemsCounter = () => {
+  const numOfItems = picIds.length;
+  const showcase = document.getElementsByTagName('li')[0];
+  showcase.innerHTML = `Showcase (${numOfItems})`;
+};
+
 export {
-  displayPics, postLikes, showLikes, likeAPic,
+  displayPics, postLikes, showLikes, likeAPic, itemsCounter,
 };
