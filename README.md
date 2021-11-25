@@ -1,8 +1,9 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# API-Webapp
 
-> One paragraph statement about the project.
+This project is about an app used for adding ones score and name to a board. The page was built using JavaScript and bundled with Webpack and uses API calls. 
+
 
 ![screenshot](./app_screenshot.png)
 
@@ -10,9 +11,21 @@ Additional description about the project and its features.
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+* JavaScript
+* Webpack
+* HTML
+* CSS
+
+## Tested With
+
+* Jest
+
+## Aditional Resources
+
+* Kanban Board
+* Involvment API
+* Host API
+* Linters: Webhint, Lighthouse, StyleLint, ESLint
 
 ## Live Demo
 
@@ -21,33 +34,21 @@ Additional description about the project and its features.
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-### Setup
-
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
-
-
+To get a local copy up and running follow the next steps:
+> Clone the repo to you local machine.
+```bash
+git clone "https://github.com/Lockless404/api-Webapp.git"
+run `npm install`
+run `npm start` to start the server
+```
 
 ## Authors
 
-👤 **Author1**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+👤 **Molnar Emese**
+ 
+  - GitHub: [Mesi21](https://github.com/Mesi21)
+  - Twitter: [Twitter](https://twitter.com/buksimesi21) 
+  - LinkedIn: [LinkedIn](https://www.linkedin.com/in/emesemesimolnar/). 
 
 👤 **Author2**
 
@@ -55,9 +56,21 @@ To get a local copy up and running follow these simple example steps.
 - Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
 - LinkedIn: [Hamza Tarar](https://linkedin.com/in/linkedinhandle)
 
+👤 **Author3**
+
+- GitHub: [@githubhandle](https://github.com/githubhandle)
+- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome!
+All contributions, issues and feature requests are welcome!
+
+1. Fork it (https://github.com/Lockless404/api-Webapp.git)
+2. Create your working branch (git checkout -b [choose-a-name])
+3. Commit your changes (git commit -am 'what this commit will fix/add/improve')
+4. Push to the branch (git push origin [chosen-name])
+5. Create a new Pull Request
 
 Feel free to check the [issues page](../../issues/).
 
@@ -65,11 +78,11 @@ Feel free to check the [issues page](../../issues/).
 
 Give a ⭐️ if you like this project!
 
-## Acknowledgments
+## :wave: Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+* Collaborators
+* Morning session team
+* Standup team
 
 ## 📝 License
 
