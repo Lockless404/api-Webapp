@@ -32,9 +32,9 @@ const displayPics = () => {
       const listItem = document.createElement('div');
       listItem.innerHTML = `<div class='f-col'>
         <img src='${it[idx].download_url}' alt=''>
-        <div class='f-row'>
+        <div class='f-row title'>
           <p>Exhibition ${idx + 1}</p>
-          <div class='f-col'>
+          <div class='f-col like'>
             <button id='like-${idx}' class='up'><i class="far fa-thumbs-up"></i></button>
             <button id='btn-${idx}' class='likes'>Likes</button>
           </div>
