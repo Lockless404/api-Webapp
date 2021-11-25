@@ -2,6 +2,7 @@ export default class CommentsPopUp {
   constructor() {
     this.popUp = document.querySelector('.popup-container');
     this.sourceAPI = 'https://picsum.photos/id/';
+    this.commentsAPI = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/6EFdWvF7FBGr1SlmUqpP/'
   }
 
   display(id) {
@@ -31,14 +32,12 @@ export default class CommentsPopUp {
                 </div>
               </div>
               <div class="comment-details">
-                <h3>Comments(<span>2</span>)</h3>
+                <h3>Comments(<span>(<span>0</span>)</span>)</h3>
                 <ul class="comment-lists">
-                  <li>03/11/2021 Alex : How can I get it?</li>
-                  <li>12/11/2021 Alex : I'm interested, discount?</li>
                 </ul>
-                <form action="#" id="form-data">
-                  <input type="text" placeholder="Your name">
-                  <textarea name="message" id="comment-msg" cols="30" rows="10" placeholder="Your comment"></textarea>
+                <form action="#" id="form-data" class="comment-form" method="post" item_id='${data.id}'>
+                  <input type="text" name="username" placeholder="Your name" required>
+                  <textarea name="comment" id="comment-msg" cols="30" rows="10" placeholder="Your comment" required></textarea>
                   <input type="submit" name="submit" value="Comment" id="comment-btn">
                 </form>
               </div>
@@ -46,8 +45,11 @@ export default class CommentsPopUp {
           </section>
           `;
           this.enableCloseBtn();
+          this.enableComment();
+          this.showComments(data.id);
         } else {
           this.popUp.style.display = 'none';
+          this.popUp.innerHTML = '';
         }
       });
     }
@@ -71,5 +73,57 @@ export default class CommentsPopUp {
       this.popUp.innerHTML = '';
       this.popUp.style.display = 'none';
     });
+  }
+
+  enableComment() {
+    const form = this.popUp.querySelector('form.comment-form');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const id = form.getAttribute('item_id');
+      const comment = form.elements.comment.value;
+      const username = form.elements.username.value;
+      this.add(id, username, comment).then((res) => {
+        if(res !== 'error'){
+          form.reset();
+          this.showComments(id);
+        }
+      })
+    });
+  }
+  
+  add = async(item_id, username, comment) => {
+    const res = await fetch(`${this.commentsAPI}comments`, {
+      method: 'POST',
+      body: JSON.stringify({
+        item_id, username, comment
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then((res) => res.text())
+    .then((data) => data)
+    .catch(() => 'error');
+    return res;
+  }
+
+  showComments = async(item_id) => {
+    const commentsList = this.popUp.querySelector('.comment-lists');
+    const res = await fetch(`${this.commentsAPI}comments?item_id=${item_id}`)
+    .then((res) => res.json())
+    .then((data) => {
+      if(!data.error){
+        commentsList.innerHTML = '';
+        data.forEach((info) => {
+          commentsList.innerHTML += `<li>${info.creation_date} ${info.username} : ${info.comment}</li>`;
+        });
+        return data;
+      }else{
+        commentsList.innerHTML = '<b>No Comments have been added yet. Be the first to write something</b>'; 
+      }
+      
+    })
+    .catch(() => 'error');
+    return res;
   }
 }

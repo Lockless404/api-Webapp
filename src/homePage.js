@@ -38,7 +38,7 @@ const displayPics = async () => {
             <button id='btn-${idx}' class='likes'>Likes</button>
           </div>
         </div>
-        <button type='button' class='commentBtn' data='${idx}'>Comments</button>
+        <button type='button' class='commentBtn' data='${it[idx].id}'>Comments</button>
         <button type='button' class='reservations'>Reservations</button>
       </div>
       `;
