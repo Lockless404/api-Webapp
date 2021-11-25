@@ -19,15 +19,14 @@ const getImages = async () => {
   return Promise.all(pics);
 };
 
-const displayPics = () => {
-  const picSection = document.getElementById('item-list');
-  const rowOne = document.createElement('div');
-  const rowTwo = document.createElement('div');
-  rowOne.setAttribute('class', 'f-row');
-  rowTwo.setAttribute('class', 'f-row');
-  let idx = 0;
-
-  getImages().then((it) => {
+const displayPics = async () => {
+  const res = await getImages().then((it) => {
+    const picSection = document.getElementById('item-list');
+    const rowOne = document.createElement('div');
+    const rowTwo = document.createElement('div');
+    rowOne.setAttribute('class', 'f-row');
+    rowTwo.setAttribute('class', 'f-row');
+    let idx = 0;
     it.forEach(() => {
       const listItem = document.createElement('div');
       listItem.innerHTML = `<div class='f-col'>
@@ -35,7 +34,7 @@ const displayPics = () => {
         <div class='f-row title'>
           <p>Exhibition ${idx + 1}</p>
           <div class='f-col like'>
-            <button id='like-${idx}' class='up'><i class="far fa-thumbs-up"></i></button>
+            <button id='like-${idx}' class='up' data='${idx}'><i class="far fa-thumbs-up"></i></button>
             <button id='btn-${idx}' class='likes'>Likes</button>
           </div>
         </div>
@@ -50,14 +49,16 @@ const displayPics = () => {
       }
       idx += 1;
     });
+    picSection.append(rowOne, rowTwo);
+    return true;
   });
-  picSection.append(rowOne, rowTwo);
+  return res;
 };
 
 const apiLikeUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${apiKeyInvolvment}/likes`;
 
-const postLikes = (imgId) => {
-  fetch(apiLikeUrl, {
+const postLikes = async (imgId) => {
+  const resp = await fetch(apiLikeUrl, {
     method: 'POST',
     body: JSON.stringify({
       item_id: imgId,
@@ -65,7 +66,10 @@ const postLikes = (imgId) => {
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
     },
-  }).then((res) => res);
+  }).then((data) => data.text())
+    .then((res) => res)
+    .catch(() => 'error');
+  return resp;
 };
 
 const getLikes = async () => {
@@ -75,26 +79,25 @@ const getLikes = async () => {
   return currItemLikes;
 };
 
-const likeBtns = document.getElementsByClassName('likes');
-
 const showLikes = () => {
   getLikes().then((img) => {
     for (let i = 0; i < img.length; i += 1) {
       const currLikes = img[i].likes;
-      likeBtns[i].innerHTML = `${currLikes} Likes`;
+      const likeBtn = document.querySelector(`#btn-${i}`);
+      likeBtn.innerHTML = `${currLikes} Likes`;
     }
   });
 };
 
 const likeAPic = () => {
-  const sayLike = document.getElementsByClassName('up');
   getLikes().then((img) => {
+    const likeBtns = document.getElementsByClassName('up');
     for (let i = 0; i < img.length; i += 1) {
-      const currId = img[i].item_id;
-      sayLike[i].addEventListener('click', () => {
-        postLikes(currId);
+      const btn = likeBtns[i];
+      btn.addEventListener('click', async () => {
+        await postLikes(img[i].item_id);
+        await showLikes();
       });
-      showLikes();
     }
   });
 };
