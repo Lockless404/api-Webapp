@@ -54,7 +54,8 @@ ul li:hover {
 ul li:first-child {
   text-decoration: underline;
 }
-/*----------- START --------- The following styles are for the COMMENT POPUP section BY Jeff [Student B] -------------------- */
+
+/* ----------- START --------- The following styles are for the COMMENT POPUP section BY Jeff [Student B] -------------------- */
 
 .popup-container {
   display: none;
@@ -65,7 +66,7 @@ ul li:first-child {
   left: 0;
   background: #fff;
   z-index: 999;
-  overflow-y: auto
+  overflow-y: auto;
 }
 
 .comment-container {
@@ -117,7 +118,7 @@ ul li:first-child {
 .project-title p {
   font-weight: 400;
 }
- 
+
 .comment-details h3 {
   text-align: center;
   font-weight: 500;
@@ -166,7 +167,7 @@ input[type="submit"] {
   cursor: pointer;
 }
 
-/*----------- STOP ---------- The following styles are for the COMMENT POPUP section BY Jeff [Student B] -------------------- */
+/* ----------- STOP ---------- The following styles are for the COMMENT POPUP section BY Jeff [Student B] -------------------- */
 
 footer {
   display: flex;
