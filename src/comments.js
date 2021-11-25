@@ -2,7 +2,7 @@ export default class CommentsPopUp {
   constructor() {
     this.popUp = document.querySelector('.popup-container');
     this.sourceAPI = 'https://picsum.photos/id/';
-    this.commentsAPI = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/6EFdWvF7FBGr1SlmUqpP/'
+    this.commentsAPI = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/6EFdWvF7FBGr1SlmUqpP/';
   }
 
   display(id) {
@@ -83,47 +83,47 @@ export default class CommentsPopUp {
       const comment = form.elements.comment.value;
       const username = form.elements.username.value;
       this.add(id, username, comment).then((res) => {
-        if(res !== 'error'){
+        if (res !== 'error') {
           form.reset();
           this.showComments(id);
         }
-      })
+      });
     });
   }
-  
-  add = async(item_id, username, comment) => {
+
+  add = async (itemId, user, comments) => {
     const res = await fetch(`${this.commentsAPI}comments`, {
       method: 'POST',
       body: JSON.stringify({
-        item_id, username, comment
+        item_id: itemId,
+        username: user,
+        comment: comments,
       }),
       headers: {
-        'Content-Type': 'application/json'
-      }
+        'Content-Type': 'application/json',
+      },
     })
-    .then((res) => res.text())
-    .then((data) => data)
-    .catch(() => 'error');
+      .then((res) => res.text())
+      .then((data) => data)
+      .catch(() => 'error');
     return res;
   }
 
-  showComments = async(item_id) => {
+  showComments = async (itemId) => {
     const commentsList = this.popUp.querySelector('.comment-lists');
-    const res = await fetch(`${this.commentsAPI}comments?item_id=${item_id}`)
-    .then((res) => res.json())
-    .then((data) => {
-      if(!data.error){
-        commentsList.innerHTML = '';
-        data.forEach((info) => {
-          commentsList.innerHTML += `<li>${info.creation_date} ${info.username} : ${info.comment}</li>`;
-        });
-        return data;
-      }else{
-        commentsList.innerHTML = '<b>No Comments have been added yet. Be the first to write something</b>'; 
-      }
-      
-    })
-    .catch(() => 'error');
+    const res = await fetch(`${this.commentsAPI}comments?item_id=${itemId}`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (!data.error) {
+          commentsList.innerTML = '';
+          data.forEach((info) => {
+            commentsList.innerHTML += `<li>${info.creation_date} ${info.username} : ${info.comment}</li>`;
+          });
+          return;
+        }
+        commentsList.innerHTML = '<b>No Comments have been added yet. Be the first to write something</b>';
+      })
+      .catch(() => 'error');
     return res;
   }
 }
