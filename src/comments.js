@@ -1,14 +1,15 @@
 export default class CommentsPopUp {
-  constructor (){
+  constructor() {
     this.popUp = document.querySelector('.popup-container');
     this.sourceAPI = 'https://picsum.photos/id/';
   }
-  display(id){
-    if(id){
+
+  display(id) {
+    if (id) {
       this.popUp.style.display = 'block';
       this.popUp.innerHTML = 'Fetching Data...';
       this.fetchData(id).then((data) => {
-        if(!Array.isArray(data)){
+        if (!Array.isArray(data)) {
           this.popUp.innerHTML = `
             <section class="comment-container transparent-background">
             <div class="section-wrapper center-block">
@@ -51,22 +52,24 @@ export default class CommentsPopUp {
       });
     }
   }
+
   fetchData = async (id) => {
     let res;
-    if(id){
+    if (id) {
       res = await fetch(`${this.sourceAPI}${id}/info`)
-      .then((res) => res.json())
-      .then((data) => data)
-      .catch(() => []);
-    }else{
+        .then((res) => res.json())
+        .then((data) => data)
+        .catch(() => []);
+    } else {
       res = [];
     }
-    return res; 
+    return res;
   }
+
   enableCloseBtn() {
     this.popUp.querySelector('.close-comments').addEventListener('click', () => {
       this.popUp.innerHTML = '';
       this.popUp.style.display = 'none';
     });
-  };
+  }
 }

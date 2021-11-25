@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     showLikes();
     likeAPic();
     const commentBtns = document.querySelectorAll('.commentBtn');
-    if(commentBtns){
+    if (commentBtns) {
       commentBtns.forEach((btn) => {
         btn.addEventListener('click', (e) => {
           e.preventDefault();
