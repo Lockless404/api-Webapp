@@ -6,16 +6,36 @@
 }
 
 body {
-  padding: 50px;
+  background-color: beige;
 }
 
 header {
+  height: 70px;
+  padding: 10px;
   display: flex;
   align-items: center;
+  color: #fff;
+  background-color: rgb(100, 115, 163);
+}
+
+#logo {
+  width: 50px;
+  height: 50px;
+}
+
+img {
+  width: 200px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 header img {
   width: 100px;
+}
+
+#item-list img {
+  width: 300px;
+  height: 200px;
 }
 
 ul {
@@ -27,6 +47,13 @@ ul li {
   margin: 0 20px;
 }
 
+ul li:hover {
+  cursor: pointer;
+}
+
+ul li:first-child {
+  text-decoration: underline;
+}
 /*----------- START --------- The following styles are for the COMMENT POPUP section BY Jeff [Student B] -------------------- */
 
 .popup-container {
@@ -142,7 +169,147 @@ input[type="submit"] {
 /*----------- STOP ---------- The following styles are for the COMMENT POPUP section BY Jeff [Student B] -------------------- */
 
 footer {
+  display: flex;
   align-items: center;
+  justify-content: center;
+  bottom: 0;
+  width: 100%;
+  min-height: 50px;
   text-align: center;
-  border-top: 1px solid #000;
+  background-color: rgb(18, 35, 66);
+  color: #fff;
+}
+
+.resContainer {
+  z-index: 500;
+  height: 94vh;
+  width: 96vw;
+  background: rgba(50, 50, 50, 0.5);
+  position: absolute;
+  top: 3vh;
+  left: 2vw;
+  display: none;
+}
+
+.reservation {
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 8rem;
+}
+
+.resClose {
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  border-radius: 0;
+  background-color: #fff;
+  border: #fff;
+  font-size: 3.5rem;
+  font-weight: 700;
+  width: 50px;
+  cursor: pointer;
+}
+
+.resImg {
+  min-width: 65%;
+  max-height: 30%;
+}
+
+.resh1 {
+  font-size: 3rem;
+}
+
+.resDetail {
+  display: flex;
+  justify-content: space-between;
+  width: 65%;
+  margin: 0.25rem;
+}
+
+.resList {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+
+.resForm {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  width: 65%;
+  height: 30%;
+}
+
+.resInputWhole {
+  width: 100%;
+}
+
+.resIn {
+  width: 40%;
+}
+
+.resFormBtn {
+  width: 40%;
+  border-radius: 0;
+  background-color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.appear {
+  display: unset;
+}
+
+.f-col {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.f-col.like {
+  border: none;
+  box-shadow: none;
+}
+
+.f-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.f-row.title {
+  align-items: center;
+  padding-left: 15px;
+  justify-content: space-between;
+}
+
+.likes {
+  background-color: #fff;
+  border: 0;
+}
+
+.up {
+  border: 0;
+  background-color: #fff;
+  cursor: pointer;
+  color: green;
+}
+
+.commentBtn,
+.reservations {
+  border-radius: 5px;
+  width: 90%;
+  margin: 10px auto;
+  background-color: rgb(161, 173, 149);
+  color: #fff;
+  border: none;
 }
