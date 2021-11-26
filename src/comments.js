@@ -93,9 +93,9 @@ export default class CommentsPopUp {
 
   total = async (id) => {
     const total = await fetch(`${this.commentsAPI}comments?item_id=${id}`)
-    .then((res) => res.json())
-    .then((data) => data.length)
-    .catch(() => 0);
+      .then((res) => res.json())
+      .then((data) => data.length)
+      .catch(() => 0);
     return total;
   }
 
