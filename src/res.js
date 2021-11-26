@@ -53,14 +53,18 @@ class Reservation {
   }
 }
 
+const getCount = (reserver) => reserver.length;
+
 const renderRes = (reserver) => {
   const resList = document.querySelector('.resList');
-  const resNumber = document.querySelector('.resNumber');
+
   reserver.forEach((reservation) => {
     resList.innerHTML += `
   <li>${reservation.date_start} - ${reservation.date_end} by ${reservation.username}</li>
   `;
-    resNumber.innerHTML = `Reservations (${reserver.length})`;
+
+    const resNumber = document.querySelector('.resNumber');
+    resNumber.innerHTML = `Reservations (${getCount(reserver)})`;
   });
 };
 
@@ -87,5 +91,5 @@ const sendRes = async (reserver) => {
 };
 
 export {
-  getApi, render, Reservation, renderRes, getRes, clearRes, sendRes,
+  getApi, render, Reservation, renderRes, getRes, clearRes, sendRes, getCount,
 };
