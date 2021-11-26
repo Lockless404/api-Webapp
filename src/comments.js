@@ -1,3 +1,4 @@
+import fetch from 'node-fetch';
 export default class CommentsPopUp {
   constructor() {
     this.popUp = document.querySelector('.popup-container');
