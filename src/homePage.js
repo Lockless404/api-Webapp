@@ -6,7 +6,7 @@ import '@fortawesome/fontawesome-free/js/brands.js';
 
 const picIds = [1000, 1002, 1003, 1015, 1021, 1022];
 
-const getImages = async () => {
+const getImages = () => {
   const pics = [];
   for (let i = 0; i < picIds.length; i += 1) {
     const urlToFetch = `https://picsum.photos/id/${picIds[i]}/info`;
@@ -38,8 +38,8 @@ const displayPics = async () => {
             <button id='btn-${idx}' class='likes'>Likes</button>
           </div>
         </div>
-        <button type='button' class='commentBtn' data='${idx}'>Comments</button>
-        <button type='button' class='reservations'>Reservations</button>
+        <button type='button' class='commentBtn' data='${it[idx].id}'>Comments</button>
+        <button type='button' id='${idx}' class='reservations'>Reservations</button>
       </div>
       `;
       if (idx < 3) {
