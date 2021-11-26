@@ -32,7 +32,7 @@ export default class CommentsPopUp {
                 </div>
               </div>
               <div class="comment-details">
-                <h3>Comments(<span>(<span>0</span>)</span>)</h3>
+                <h3>Comments(<span class="total-comments">0</span>)</h3>
                 <ul class="comment-lists">
                 </ul>
                 <form action="#" id="form-data" class="comment-form" method="post" item_id='${data.id}'>
@@ -91,6 +91,18 @@ export default class CommentsPopUp {
     });
   }
 
+  total = async (id) => {
+    const total = await fetch(`${this.commentsAPI}comments?item_id=${id}`)
+    .then((res) => res.json())
+    .then((data) => data.length)
+    .catch(() => 0);
+    return total;
+  }
+
+  displayTotal(total) {
+    this.popUp.querySelector('.total-comments').innerHTML = total;
+  }
+
   add = async (itemId, user, comments) => {
     const res = await fetch(`${this.commentsAPI}comments`, {
       method: 'POST',
@@ -115,10 +127,11 @@ export default class CommentsPopUp {
       .then((res) => res.json())
       .then((data) => {
         if (!data.error) {
-          commentsList.innerTML = '';
+          commentsList.innerHTML = '';
           data.forEach((info) => {
             commentsList.innerHTML += `<li>${info.creation_date} ${info.username} : ${info.comment}</li>`;
           });
+          this.total(itemId).then((total) => this.displayTotal(total));
           return;
         }
         commentsList.innerHTML = '<b>No Comments have been added yet. Be the first to write something</b>';
