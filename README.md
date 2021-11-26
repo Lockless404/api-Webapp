@@ -65,11 +65,11 @@ run `npm start` to start the server
   - Twitter: [@hamza_tarar10](https://twitter.com/hamza_tarar10)
   - LinkedIn: [Hamza Tarar](https://www.linkedin.com/in/hamza-tarar-639685216/)
 
-👤 **Author3**
+👤 **Jeff Kayombo**
 
-  - GitHub: [@githubhandle](https://github.com/githubhandle)
-  - Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-  - LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+  - GitHub: [@JEFFKAY16](https://github.com/JEFFKAY16)
+  - Twitter: [@JEFF_KAYOMBO](https://twitter.com/jeff_kayombo)
+  - LinkedIn: [JEFF KAYOMBO](https://www.linkedin.com/in/jeff-kayombo-aa9758174/)
 
 ## 🤝 Contributing
 
