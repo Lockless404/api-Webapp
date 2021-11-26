@@ -170,6 +170,7 @@ input[type="submit"] {
 /* ----------- STOP ---------- The following styles are for the COMMENT POPUP section BY Jeff [Student B] -------------------- */
 
 footer {
+  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -194,12 +195,13 @@ footer {
 .reservation {
   height: 100%;
   width: 100%;
-  background-color: #fff;
+  background-color: beige;
   border: 1px solid #000;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 2rem 8rem;
+  cursor: default;
 }
 
 .resClose {
@@ -207,7 +209,8 @@ footer {
   top: 1%;
   right: 1%;
   border-radius: 0;
-  background-color: #fff;
+  background-color: rgb(100, 115, 163);
+  color: #fff;
   border: #fff;
   font-size: 3.5rem;
   font-weight: 700;
@@ -217,7 +220,7 @@ footer {
 
 .resImg {
   min-width: 65%;
-  max-height: 30%;
+  height: 350px;
 }
 
 .resh1 {
@@ -244,6 +247,7 @@ footer {
   justify-content: space-evenly;
   width: 65%;
   height: 30%;
+  text-align: unset;
 }
 
 .resInputWhole {
@@ -252,12 +256,15 @@ footer {
 
 .resIn {
   width: 40%;
+  background-color: beige;
+  cursor: text;
 }
 
 .resFormBtn {
   width: 40%;
   border-radius: 0;
-  background-color: #fff;
+  background-color: rgb(100, 115, 163);
+  color: #fff;
   font-size: 1.8rem;
   cursor: pointer;
 }
