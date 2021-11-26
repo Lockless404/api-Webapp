@@ -2,7 +2,8 @@ import './style.css';
 import {
   getApi, render, Reservation, renderRes, getRes, clearRes, sendRes,
 } from './res.js';
-import getPics from './homePage.js';
+import { displayPics, showLikes, likeAPic } from './homePage.js';
+import CommentsPopUp from './comments';
 
 const homepage = document.querySelector('.itemList');
 const reservationSection = document.querySelector('.resContainer');
@@ -40,6 +41,20 @@ homepage.addEventListener('click', async (e) => {
   }
 });
 
+const commentsModule = new CommentsPopUp();
 document.addEventListener('DOMContentLoaded', () => {
-  getPics();
+  displayPics().then(() => {
+    showLikes();
+    likeAPic();
+    const commentBtns = document.querySelectorAll('.commentBtn');
+    if (commentBtns) {
+      commentBtns.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const itemId = btn.getAttribute('data');
+          commentsModule.display(itemId);
+        });
+      });
+    }
+  });
 });

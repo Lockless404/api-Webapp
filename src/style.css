@@ -6,16 +6,31 @@
 }
 
 body {
-  padding: 0 50px;
+  background-color: beige;
 }
 
 header {
+  height: 70px;
+  padding: 10px;
   display: flex;
   align-items: center;
+  color: #fff;
+  background-color: rgb(100, 115, 163);
+}
+
+#logo {
+  width: 50px;
+  height: 50px;
 }
 
 img {
   width: 200px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+header img {
+  width: 100px;
 }
 
 #item-list img {
@@ -32,13 +47,138 @@ ul li {
   margin: 0 20px;
 }
 
-footer {
+ul li:hover {
+  cursor: pointer;
+}
+
+ul li:first-child {
+  text-decoration: underline;
+}
+
+/* ----------- START --------- The following styles are for the COMMENT POPUP section BY Jeff [Student B] -------------------- */
+
+.popup-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: #fff;
+  z-index: 999;
+  overflow-y: auto;
+}
+
+.comment-container {
+  width: 90%;
+  margin: 20px auto;
+  background: #ddd9;
+  border-radius: 20px;
+  padding: 20px;
+  align-items: center;
+}
+
+.section-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.block-one {
+  text-align: center;
+  position: relative;
+}
+
+.main-img {
+  width: 60%;
+  border-radius: 20px;
+}
+
+.sub-img {
+  width: 75px;
+  height: 75px;
   position: absolute;
+  top: 0%;
+  cursor: pointer;
+}
+
+.project-title h2 {
+  text-align: center;
+  font-weight: 500;
+  margin: 10px 0;
+}
+
+.project-details {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px 50px;
+}
+
+.project-title p {
+  font-weight: 400;
+}
+
+.comment-details h3 {
+  text-align: center;
+  font-weight: 500;
+  margin: 10px 0;
+}
+
+.comment-lists {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+form {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin: 20px auto;
+}
+
+input[type="text"] {
+  margin: 10px 0;
+  padding: 10px;
+  outline: none;
+  background: transparent;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+
+textarea {
+  margin: 10px 0;
+  padding: 10px;
+  outline: none;
+  background: transparent;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+
+input[type="submit"] {
+  margin: 10px 0;
+  padding: 10px;
+  outline: none;
+  background: transparent;
+  border: 1px solid #000;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* ----------- STOP ---------- The following styles are for the COMMENT POPUP section BY Jeff [Student B] -------------------- */
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   bottom: 0;
   width: 100%;
-  align-items: center;
+  min-height: 50px;
   text-align: center;
-  border-top: 1px solid #000;
+  background-color: rgb(18, 35, 66);
+  color: #fff;
 }
 
 .resContainer {
@@ -129,6 +269,15 @@ footer {
 .f-col {
   display: flex;
   flex-direction: column;
+  margin: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.f-col.like {
+  border: none;
+  box-shadow: none;
 }
 
 .f-row {
@@ -137,7 +286,30 @@ footer {
   justify-content: space-evenly;
 }
 
+.f-row.title {
+  align-items: center;
+  padding-left: 15px;
+  justify-content: space-between;
+}
+
 .likes {
   background-color: #fff;
+  border: 0;
+}
+
+.up {
+  border: 0;
+  background-color: #fff;
+  cursor: pointer;
+  color: green;
+}
+
+.commentBtn,
+.reservations {
+  border-radius: 5px;
+  width: 90%;
+  margin: 10px auto;
+  background-color: rgb(161, 173, 149);
+  color: #fff;
   border: none;
 }
