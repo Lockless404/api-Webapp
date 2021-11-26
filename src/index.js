@@ -1,6 +1,6 @@
 import './style.css';
 import {
-  getApi, render, Reservation, renderRes, getRes, clearRes, sendRes, getCount
+  getApi, render, Reservation, renderRes, getRes, clearRes, sendRes,
 } from './res.js';
 import {
   displayPics, showLikes, likeAPic, itemsCounter,

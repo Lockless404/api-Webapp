@@ -53,22 +53,20 @@ class Reservation {
   }
 }
 
+const getCount = (reserver) => reserver.length;
+
 const renderRes = (reserver) => {
   const resList = document.querySelector('.resList');
-  
+
   reserver.forEach((reservation) => {
     resList.innerHTML += `
   <li>${reservation.date_start} - ${reservation.date_end} by ${reservation.username}</li>
   `;
 
-  const resNumber = document.querySelector('.resNumber');
-  resNumber.innerHTML = `Reservations (${getCount(reserver)})`;
+    const resNumber = document.querySelector('.resNumber');
+    resNumber.innerHTML = `Reservations (${getCount(reserver)})`;
   });
 };
-
-const getCount = (reserver) => {
-    return reserver.length;
-} 
 
 const getRes = async (id) => {
   const pull = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/4FZqlyOYZUYNqbT9zcA9/reservations?item_id=${id}`);
