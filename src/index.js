@@ -2,8 +2,10 @@ import './style.css';
 import {
   getApi, render, Reservation, renderRes, getRes, clearRes, sendRes,
 } from './res.js';
-import { displayPics, showLikes, likeAPic } from './homePage.js';
-import CommentsPopUp from './comments';
+import {
+  displayPics, showLikes, likeAPic, itemsCounter,
+} from './homePage.js';
+import CommentsPopUp from './comments.js';
 
 const homepage = document.querySelector('.itemList');
 const reservationSection = document.querySelector('.resContainer');
@@ -46,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
   displayPics().then(() => {
     showLikes();
     likeAPic();
+    itemsCounter();
     const commentBtns = document.querySelectorAll('.commentBtn');
     if (commentBtns) {
       commentBtns.forEach((btn) => {
