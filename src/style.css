@@ -1,0 +1,318 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: beige;
+}
+
+header {
+  height: 70px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  background-color: rgb(100, 115, 163);
+}
+
+#logo {
+  width: 50px;
+  height: 50px;
+}
+
+img {
+  width: 200px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+header img {
+  width: 100px;
+}
+
+#item-list img {
+  width: 300px;
+  height: 200px;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+}
+
+ul li {
+  margin: 0 20px;
+}
+
+ul li:hover {
+  cursor: pointer;
+}
+
+ul li:first-child {
+  text-decoration: underline;
+}
+
+.popup-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: #fff;
+  z-index: 999;
+  overflow-y: auto;
+}
+
+.comment-container {
+  width: 90%;
+  margin: 20px auto;
+  background: #ddd9;
+  border-radius: 20px;
+  padding: 20px;
+  align-items: center;
+}
+
+.section-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.block-one {
+  text-align: center;
+  position: relative;
+}
+
+.main-img {
+  width: 60%;
+  border-radius: 20px;
+}
+
+.sub-img {
+  width: 75px;
+  height: 75px;
+  position: absolute;
+  top: 0%;
+  cursor: pointer;
+}
+
+.project-title h2 {
+  text-align: center;
+  font-weight: 500;
+  margin: 10px 0;
+}
+
+.project-details {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px 50px;
+}
+
+.project-title p {
+  font-weight: 400;
+}
+
+.comment-details h3 {
+  text-align: center;
+  font-weight: 500;
+  margin: 10px 0;
+}
+
+.comment-lists {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+form {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin: 20px auto;
+}
+
+input[type="text"] {
+  margin: 10px 0;
+  padding: 10px;
+  outline: none;
+  background: transparent;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+
+textarea {
+  margin: 10px 0;
+  padding: 10px;
+  outline: none;
+  background: transparent;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+
+input[type="submit"] {
+  margin: 10px 0;
+  padding: 10px;
+  outline: none;
+  background: transparent;
+  border: 1px solid #000;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+footer {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+  width: 100%;
+  min-height: 50px;
+  text-align: center;
+  background-color: rgb(18, 35, 66);
+  color: #fff;
+}
+
+.resContainer {
+  z-index: 500;
+  width: 96vw;
+  background: rgba(50, 50, 50, 0.5);
+  position: absolute;
+  top: 3vh;
+  left: 2vw;
+  display: none;
+}
+
+.reservation {
+  height: 100%;
+  width: 100%;
+  background-color: beige;
+  border: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 8rem;
+  cursor: default;
+}
+
+.resClose {
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  border-radius: 0;
+  background-color: rgb(100, 115, 163);
+  color: #fff;
+  border: #fff;
+  font-size: 3.5rem;
+  font-weight: 700;
+  width: 50px;
+  cursor: pointer;
+}
+
+.resImg {
+  min-width: 65%;
+  height: 350px;
+}
+
+.resh1 {
+  font-size: 3rem;
+}
+
+.resDetail {
+  display: flex;
+  justify-content: space-between;
+  width: 65%;
+  margin: 0.25rem;
+}
+
+.resList {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+
+.resForm {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  width: 65%;
+  height: 30%;
+  text-align: unset;
+}
+
+.resInputWhole {
+  width: 100%;
+}
+
+.resIn {
+  width: 40%;
+  background-color: beige;
+  cursor: text;
+}
+
+.resFormBtn {
+  width: 40%;
+  border-radius: 0;
+  background-color: rgb(100, 115, 163);
+  color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.appear {
+  display: unset;
+}
+
+.f-col {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.f-col.like {
+  border: none;
+  box-shadow: none;
+}
+
+.f-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.f-row.title {
+  align-items: center;
+  padding-left: 15px;
+  justify-content: space-between;
+}
+
+.likes {
+  background-color: #fff;
+  border: 0;
+}
+
+.up {
+  border: 0;
+  background-color: #fff;
+  cursor: pointer;
+  color: green;
+}
+
+.commentBtn,
+.reservations {
+  border-radius: 5px;
+  width: 90%;
+  margin: 10px auto;
+  background-color: rgb(161, 173, 149);
+  color: #fff;
+  border: none;
+}
