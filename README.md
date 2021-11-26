@@ -36,9 +36,13 @@ This project is about an exhibition app used to display, comment on and reserve 
 * [Lorem Picsum](https://picsum.photos) 
 * Linters: Webhint, Lighthouse, StyleLint, ESLint
 
+## Video description of project
+
+[Watch video here](https://drive.google.com/file/d/10Df8piuumCMcRFjah8a-kHuLXsJZMg8w/view?usp=sharing)
+
 ## Live Demo
 
-[Live Demo Link](https://cocky-shockley-f14242.netlify.app/)
+[Live Demo](https://cocky-shockley-f14242.netlify.app/)
 
 
 ## Getting Started
