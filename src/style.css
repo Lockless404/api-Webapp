@@ -55,8 +55,6 @@ ul li:first-child {
   text-decoration: underline;
 }
 
-/* ----------- START --------- The following styles are for the COMMENT POPUP section BY Jeff [Student B] -------------------- */
-
 .popup-container {
   display: none;
   position: fixed;
@@ -166,8 +164,6 @@ input[type="submit"] {
   border-radius: 5px;
   cursor: pointer;
 }
-
-/* ----------- STOP ---------- The following styles are for the COMMENT POPUP section BY Jeff [Student B] -------------------- */
 
 footer {
   position: absolute;
