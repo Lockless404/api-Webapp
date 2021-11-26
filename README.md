@@ -2,12 +2,18 @@
 
 # API-Webapp
 
-This project is about an app used for adding ones score and name to a board. The page was built using JavaScript and bundled with Webpack and uses API calls. 
+This project is about an exhibition app used to display, comment on and reserve art. The page was built using JavaScript and bundled with Webpack and uses API calls. The webapp has 3 user interfaces:
+  - A home page showing a list of items that you can "like".
+    * Made by: [Molnar Emese](https://github.com/Mesi21)
+  - A popup window with more data about an item that you can use to leave a comment.
+    * Made by:
+  - A popup window with more data about an item that you can use to make a reservation.
+    * Made by: [Hamza Tarar](https://github.com/Lockless404)
 
+![Homepage Screenshot](./webApiHome.png)
 
-![screenshot](./app_screenshot.png)
-
-Additional description about the project and its features.
+![Reservation Popup Screenshot 1](./webApiRes1.png)
+![Reservation Popup Screenshot 2](./webApiRes2.png)
 
 ## Built With
 
@@ -24,12 +30,12 @@ Additional description about the project and its features.
 
 * Kanban Board
 * Involvment API
-* Host API
+* [Lorem Picsum](https://picsum.photos) 
 * Linters: Webhint, Lighthouse, StyleLint, ESLint
 
 ## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://cocky-shockley-f14242.netlify.app/)
 
 
 ## Getting Started
@@ -48,19 +54,19 @@ run `npm start` to start the server
  
   - GitHub: [Mesi21](https://github.com/Mesi21)
   - Twitter: [Twitter](https://twitter.com/buksimesi21) 
-  - LinkedIn: [LinkedIn](https://www.linkedin.com/in/emesemesimolnar/). 
+  - LinkedIn: [LinkedIn](https://www.linkedin.com/in/emesemesimolnar/)
 
-👤 **Author2**
+👤 **Hamza Tarar**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [Hamza Tarar](https://linkedin.com/in/linkedinhandle)
+  - GitHub: [@Lockless404](https://github.com/Lockless404)
+  - Twitter: [@hamza_tarar10](https://twitter.com/hamza_tarar10)
+  - LinkedIn: [Hamza Tarar](https://www.linkedin.com/in/hamza-tarar-639685216/)
 
 👤 **Author3**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+  - GitHub: [@githubhandle](https://github.com/githubhandle)
+  - Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
+  - LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
 ## 🤝 Contributing
 
