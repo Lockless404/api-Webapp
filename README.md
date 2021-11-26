@@ -6,7 +6,7 @@ This project is about an exhibition app used to display, comment on and reserve 
   - A home page showing a list of items that you can "like".
     * Made by: [Molnar Emese](https://github.com/Mesi21)
   - A popup window with more data about an item that you can use to leave a comment.
-    * Made by:
+    * Made by: [Jeff Kayombo](https://github.com/JEFFKAY16)
   - A popup window with more data about an item that you can use to make a reservation.
     * Made by: [Hamza Tarar](https://github.com/Lockless404)
 
@@ -14,6 +14,9 @@ This project is about an exhibition app used to display, comment on and reserve 
 
 ![Reservation Popup Screenshot 1](./webApiRes1.png)
 ![Reservation Popup Screenshot 2](./webApiRes2.png)
+
+![Comment Popup Screenshot 1](./webApiCom1.png)
+![Comment Popup Screenshot 2](./webApiCom2.png)
 
 ## Built With
 
