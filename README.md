@@ -50,17 +50,17 @@ run `npm start` to start the server
   - Twitter: [Twitter](https://twitter.com/buksimesi21) 
   - LinkedIn: [LinkedIn](https://www.linkedin.com/in/emesemesimolnar/). 
 
-👤 **Author2**
+👤 **Hamzar Tarar**
 
 - GitHub: [@githubhandle](https://github.com/githubhandle)
 - Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
 - LinkedIn: [Hamza Tarar](https://linkedin.com/in/linkedinhandle)
 
-👤 **Author3**
+👤 **Jeff Kayombo**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@JEFFKAY16](https://github.com/JEFFKAY16)
+- Twitter: [@JEFF_KAYOMBO](https://twitter.com/jeff_kayombo)
+- LinkedIn: [JEFF KAYOMBO](https://www.linkedin.com/in/jeff-kayombo-aa9758174/)
 
 ## 🤝 Contributing
 
